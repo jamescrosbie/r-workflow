@@ -11,7 +11,7 @@ jobs:
     test-code:
         runs-on: ubuntu-latest
 
-   steps:
+    steps:
         - name: Setup R
           uses: r-lib/actions/setup-r@v3
 
