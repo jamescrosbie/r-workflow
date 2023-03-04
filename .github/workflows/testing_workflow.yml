@@ -1,6 +1,6 @@
 name: Learn github actions with R
 
-run-name: Testing code
+run-name: Testing R code
 
 on:
     - push
@@ -11,20 +11,20 @@ jobs:
     test-code:
         runs-on: ubuntu-latest
 
-    steps:
-        - name: Setup R
-          uses: r-lib/actions/setup-r@v3
+        steps:
+            - name: Setup R
+              uses: r-lib/actions/setup-r@v3
 
-        - name: install packages
-          run: Rscript -e 'install.packages(c("testthat","lintr"))'
+            - name: install packages
+              run: Rscript -e 'install.packages(c("testthat","lintr"))'
 
-        - name: Lint with lintr
-          run: Rscript -e 'lintr::lint_dir("R")'
+            - name: Lint with lintr
+              run: Rscript -e 'lintr::lint_dir("R")'
 
-        - name: Test with testthat
-          id: run-tests
-          run: Rscript -e 'testthat::test_dir("tests")'
+            - name: Test with testthat
+              id: run-tests
+              run: Rscript -e 'testthat::test_dir("tests")'
 
-        - name: Upload test report
-          uses: actions/upload-artifact@v3
-          run: Rscript -e 'print("Must upload test report here")'
+            - name: Upload test report
+              uses: actions/upload-artifact@v3
+              run: Rscript -e 'print("Must upload test report here")'
