@@ -26,5 +26,4 @@ jobs:
               run: Rscript -e 'testthat::test_dir("tests")'
 
             - name: Upload test report
-              uses: actions/upload-artifact@v3
               run: Rscript -e 'print("Must upload test report here")'
