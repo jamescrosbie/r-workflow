@@ -1,5 +1,5 @@
 
-library(dplyr)
+!require("dplyr") install.packages("dplyr")
 
 
 my_add <- function(x, y) {
