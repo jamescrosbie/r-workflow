@@ -1,8 +1,8 @@
 
-# library(testthat)
-#
-# #Script to test ----------------------
-# source("../../R/my_functions.R")
+library(testthat)
+
+#Script to test ----------------------
+source("../../R/my_functions.R")
 
 #Tests -------------------------------
 testthat::test_that("add function",{
@@ -16,4 +16,4 @@ testthat::test_that("sub function",{
 })
 
 # as this is not a package run
-# testthat::test_dir("tests") from the project root folder
+# testthat::test_dir("tests/testhat") from the project root folder
