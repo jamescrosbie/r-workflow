@@ -2,7 +2,7 @@
 library(testthat)
 
 #Script to test ----------------------
-source("../R/my_functions.R")
+source("../../R/my_functions.R")
 
 #Tests -------------------------------
 testthat::test_that("add function",{
