@@ -3,9 +3,11 @@ name: Learn github actions with R
 run-name: Testing R code
 
 on:
-    - push
-    - pull_request
-    - workflow_call
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+    workflow_call
 
 jobs:
     test-code:
