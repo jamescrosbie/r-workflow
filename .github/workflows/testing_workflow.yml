@@ -3,7 +3,7 @@ name: Learn github actions with R
 run-name: Testing R code
 
 on:
-    - workflow_call
+    workflow_call:
     push:
         branches-ignore:
             - main
