@@ -1,14 +1,15 @@
 name: Learn github actions with R
 
-run-name: Build and Deploy
+run-name: Build and Deploy with R and Docker
 
 on:
     pull_request:
-        branches: [main]
+        branches:
+            - main
 
 jobs:
     test-code:
-    uses: ./.github/workflows/testing_workflow.yml
+        uses: ./.github/workflows/testing_workflow.yml
 
     build:
         runs-on: ubuntu-latest
