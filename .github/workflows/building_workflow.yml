@@ -1,0 +1,22 @@
+name: Learn github actions with R
+
+run-name: Build and Deploy
+
+on:
+    pull_request:
+        branches: [main]
+
+jobs:
+    test-code:
+    uses: ./.github/workflows/testing_workflow.yml
+
+    build:
+        runs-on: ubuntu-latest
+        needs: test-code
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Create docker image
+              run: |
+                docker build -t ${{github.actor}}/test-app .
