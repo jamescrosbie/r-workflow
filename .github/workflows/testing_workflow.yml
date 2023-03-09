@@ -5,8 +5,6 @@ run-name: Testing R code
 on:
     workflow_call:
     push:
-        branches-ignore:
-            - main
     pull_request:
         branches:
             - main
@@ -34,5 +32,3 @@ jobs:
               id: run-tests
               run: Rscript -e 'testthat::test_dir("tests/testthat")'
 
-            - name: Upload test report
-              run: Rscript -e 'print("Must upload test report here")'
